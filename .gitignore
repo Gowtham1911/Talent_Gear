@@ -8,3 +8,13 @@ Thumbs.db
 
 # Uploaded files
 backend/uploads/
+
+# Dependencies
+node_modules/
+frontend/node_modules/
+backend/node_modules/
+
+# Build output
+frontend/.next/
+backend/dist/
+frontend/tsconfig.tsbuildinfo
