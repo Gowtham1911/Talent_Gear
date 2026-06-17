@@ -27,7 +27,7 @@ export default function ProfilePage() {
   const [photoUploading, setPhotoUploading] = useState(false);
   const [editMode, setEditMode] = useState(false);
 
-  const API = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
+  const API = process.env.NEXT_PUBLIC_API_URL || "https://talent-gear-backend.onrender.com";
 
   useEffect(() => {
     if (!getToken()) { router.push("/login"); return; }

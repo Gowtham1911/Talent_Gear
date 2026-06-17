@@ -1,4 +1,4 @@
-export const API_BASE = process.env.NEXT_PUBLIC_API_URL!;
+export const API_BASE = process.env.NEXT_PUBLIC_API_URL || "https://talent-gear-backend.onrender.com";
 
 export function getToken(): string | null {
   if (typeof window === "undefined") return null;
