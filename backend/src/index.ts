@@ -39,4 +39,12 @@ app.use("/api/applications", applicationRoutes);
 app.use("/api/assessments", assessmentRoutes);
 
 const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => console.log(`Backend running on port ${PORT}`));
+app.listen(PORT, () => {
+  console.log(`Backend running on port ${PORT}`);
+  // Keep-alive ping every 14 min to prevent Render free tier cold starts
+  if (process.env.RENDER_EXTERNAL_URL) {
+    setInterval(() => {
+      fetch(`${process.env.RENDER_EXTERNAL_URL}/health`).catch(() => {});
+    }, 14 * 60 * 1000);
+  }
+});
